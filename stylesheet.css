@@ -30,12 +30,7 @@
     max-height: 66px !important;
     padding-top: 5px;
 }
-/*
-.ghx-issue .ghx-flags,
-.ghx-issue .ghx-avatar {
-    left: auto !important;
-    right: 5px !important;
-}*/
+
 
 .ghx-issue .ghx-flags,
 .ghx-issue .ghx-avatar {
@@ -146,5 +141,46 @@
 .ghx-extra-field[data-tooltip~="None"] {
     display: none !important;
 }
+
+/* User avatars for quick filters */
+
+.js-quickfilter-button[title^="assignee ="] {
+    padding-left: 30px !important;
+    position: relative;
+}
+
+.js-quickfilter-button[title="assignee = vmaxakova"]:before,
+.js-quickfilter-button[title="assignee = dnguyen"]:before,
+.js-quickfilter-button[title="assignee = kharrop"]:before,
+.js-quickfilter-button[title="assignee = lturri"]:before {
+    content: " ";
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: contain !important;
+    background-size: 16px 16px !important;
+    border-radius: 3px;
+    height: 16px;
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    width: 16px;
+}
+
+.js-quickfilter-button[title="assignee = vmaxakova"]:before {
+    background-image: url("https://secure.gravatar.com/avatar/4ea4856d1931ff4793b4984463884e77?d=mm&s=48");
+}
+
+.js-quickfilter-button[title="assignee = dnguyen"]:before {
+    background-image: url("https://secure.gravatar.com/avatar/17e92fa317165ad98fe75eabf4d51d56?d=mm&s=48");
+}
+
+.js-quickfilter-button[title="assignee = kharrop"]:before {
+    background-image: url("https://secure.gravatar.com/avatar/5b9b52788900f3317b3bc76855953b81?d=mm&s=48");
+}
+
+.js-quickfilter-button[title="assignee = lturri"]:before {
+    background-image: url("https://secure.gravatar.com/avatar/eb3808c1d11ada98f8155bbf73cfe3ba?d=mm&s=48");
+}
+
 
 }
