@@ -30,7 +30,12 @@
     max-height: 66px !important;
     padding-top: 5px;
 }
-
+/*
+.ghx-issue .ghx-flags,
+.ghx-issue .ghx-avatar {
+    left: auto !important;
+    right: 5px !important;
+}*/
 
 .ghx-issue .ghx-flags,
 .ghx-issue .ghx-avatar {
@@ -142,7 +147,11 @@
     display: none !important;
 }
 
-/* User avatars for quick filters */
+/**************************************
+
+User avatars for quick filters
+
+***************************************/
 
 .js-quickfilter-button[title^="assignee ="] {
     padding-left: 30px !important;
@@ -179,8 +188,140 @@
 }
 
 .js-quickfilter-button[title="assignee = lturri"]:before {
-    background-image: url("https://secure.gravatar.com/avatar/eb3808c1d11ada98f8155bbf73cfe3ba?d=mm&s=48");
+    background-image: url("https://s3.amazonaws.com/uploads.hipchat.com/11887/39301/bhYmuHPQVWEHGEL/upload.png");
 }
+ 
+
+
+/**************************************
+
+Use colored dots for "Due in..." filters
+
+***************************************/
+
+.js-quickfilter-button[title^="Due in"],
+.js-quickfilter-button[title^="Overdue"],
+.js-quickfilter-button[title^="No due date"] {
+    padding-left: 20px !important;
+    position: relative;
+}
+
+.js-quickfilter-button[title^="Due in"]:before,
+.js-quickfilter-button[title^="Overdue"]:before,
+.js-quickfilter-button[title^="No due date"]:before {
+    content: " ";
+    border-radius: 100%;
+    height: 7px;
+    position: absolute;
+    left: 6px;
+    top: 10px;
+    width: 7px;
+}
+
+.js-quickfilter-button[title="Overdue"]:before {
+    background-color: #cc0000;
+}
+
+.js-quickfilter-button[title="Due in 1 week"]:before {
+    background-color: #ff9933;
+}
+
+.js-quickfilter-button[title="Due in 2 weeks"]:before {
+    background-color: #ffdd33;
+}
+
+.js-quickfilter-button[title="Due in 4 weeks"]:before {
+    background-color: #aae0aa;
+}
+
+.js-quickfilter-button[title^="No due date"]:before {
+    background-color: transparent;
+    border: 1px solid #CCC;
+}
+
+
+/**************************************
+
+Quick Filter Dividers
+
+***************************************/
+
+
+.js-quickfilter-button[title="assignee = lturri"],
+.js-quickfilter-button[title^="No due date"] {
+    margin-right: 20px !important;
+}
+
+.js-quickfilter-button[title="assignee = lturri"]:after,
+.js-quickfilter-button[title^="No due date"]:after {
+    content: " ";
+    border-right: 1px dotted #CCC;
+    height: 22px;
+    position: absolute;
+    right: -10px;
+    top: 4px;
+    width: 1px;
+} 
+
+
+/**************************************
+
+Quick View Sidebar
+
+***************************************/
+
+/* Make issue title larger on quick-view sidebar */
+
+.ghx-detail-head .ghx-detail-summary {
+    margin-bottom: 10px !important;
+    margin-top: 20px !important;
+}
+
+.ghx-detail-view .ghx-fieldname-summary {
+    font-size: 18px;
+font-weight: bold !important;
+}
+
+.ghx-detail-view .ghx-fieldname-issuekey a {
+    background-color: #3B73AF;
+    border-radius: 3px;
+    color: #FFFFFF !important;
+    font-size: 13px;
+    font-weight: bold !important;
+    padding: 3px 5px;
+    text-decoration: none !important;
+}
+
+.ghx-detail-view .ghx-fieldname-issuekey a:hover {
+    background-color: #194067;
+}
+
+/* Style labels (they are unstyled for some reason */
+.ghx-detail-view .ghx-detail-description.ghx-fieldname-labels {
+    background: none repeat scroll 0 0 #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 3.01px;
+    display: inline-block !important;
+    font-size: 13px !important;
+    font-weight: normal;
+    line-height: 1;
+    margin-left: 4px !important;
+    max-width: 100%;
+    overflow-x: hidden;
+    padding: 2px 5px !important;
+    text-align: left;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Adjust wrapping Epic */
+.ghx-detail-view .aui-label {
+    font-size: 13px !important;
+    line-height: 125% !important;
+}
+
+
 
 
 }
