@@ -1,327 +1,709 @@
 @namespace url(http://www.w3.org/1999/xhtml);
-
+ 
 @-moz-document domain("helpdesk.alkamitech.com") {
-
+ 
 .ghx-issue {
-    border-radius: 4px;
-    margin: 4px 4px 6px !important;
-    border-left: 1px solid #ccc !important;
+border-radius: 4px;
+margin: 4px 4px 6px !important;
+border-left: 1px solid #ccc !important;
 }
-
-.ghx-issue-subtask {
-    margin-left: 10px !important;
-}
-
+ 
 .ghx-issue .ghx-issue-content {
-    padding: 5px 5px 5px 10px !important;
+padding: 5px 5px 5px 10px !important;
 }
-
+ 
 .ghx-issue-fields {
-     padding-right: 0 !important;
+padding-right: 0 !important;
 }
-
+ 
 .js-key-link {
-    font-size: 11px;
+font-size: 11px;
 }
-
+ 
 .ghx-inner {
-    font-size: 12px;
-    line-height: 135% !important;
-    max-height: 66px !important;
-    padding-top: 5px;
+font-size: 12px;
+line-height: 135% !important;
+max-height: 66px !important;
+padding-top: 5px;
 }
-/*
+ 
 .ghx-issue .ghx-flags,
 .ghx-issue .ghx-avatar {
-    left: auto !important;
-    right: 5px !important;
-}*/
-
-.ghx-issue .ghx-flags,
+left: auto !important;
+}
+ 
 .ghx-issue .ghx-avatar {
-    left: auto !important;
+right: 5px !important;
+top: 3px !important;
 }
-
-.ghx-issue .ghx-flags {
-    right: 30px !important;
-    top: 7px !important;
-}
-
-.ghx-issue .ghx-avatar {
-    right: 5px !important;
-    top: 3px !important;
-}
-
+ 
 .ghx-avatar-img {
-    height: 18px !important;
-    width: 18px !important;
+height: 18px !important;
+width: 18px !important;
 }
-
+ 
 .ghx-issue .ghx-type {
-    left: 10px !important;
-    top: 5px !important;
+left: 10px !important;
+top: 5px !important;
 }
-
+ 
 .ghx-column .ghx-key a {
-    font-size: 11px !important;
-    font-weight: bold;
-    margin-left: 20px !important;
+font-size: 11px !important;
+font-weight: bold;
+margin-left: 20px !important;
 }
-
+ 
 .ghx-grabber {
-    border-radius: 4px 0 0 4px;
-    width: 3px !important;
+border-radius: 4px 0 0 4px;
+width: 3px !important;
 }
-
-
+ 
+/* remove days */
+.ghx-issue .ghx-days {
+display: none;
+}
+ 
+/* move priority to bottom of card */
+.ghx-issue .ghx-flags {
+bottom: 4px !important;
+right: 3px !important;
+top: auto !important;
+}
+ 
+.aui-label {
+line-height: 135% !important;
+}
+ 
+ 
+/**************************************
+Parent and subtasks
+***************************************/
+ 
+.ghx-parent-group {
+background-color: #F5F5F5 !important;;
+border: 1px solid #CCCCCC !important;
+border-radius: 4px !important;
+margin: 4px 4px 6px !important;
+}
+ 
+.ghx-parent-stub {
+border: 0 none !important;
+}
+ 
+.ghx-parent-stub .ghx-key {
+border-left-width: 0px !important;
+color: #666666 !important;
+font-size: 11px !important;
+font-weight: bold !important;
+}
+ 
+.ghx-parent-stub .ghx-summary {
+font-size: 10px;
+}
+ 
+.ghx-parent-group .ghx-issue {
+margin-bottom: 4px !important;
+}
+ 
+ 
+ 
+ 
+ 
+/**************************************
+Columns
+***************************************/
+ 
 /* Dim cards past QA lanes */
-
-.ghx-column[data-column-id="188"] .ghx-issue,
-.ghx-column[data-column-id="189"] .ghx-issue {
-    opacity: 0.7;
+ 
+.ghx-column[data-column-id="187"] .ghx-issue,
+.ghx-column[data-column-id="187"] .ghx-parent-stub {
+opacity: 0.6;
 }
-
-.ghx-column[data-column-id="190"] .ghx-issue {
-    opacity: 0.4;
+ 
+.ghx-column[data-column-id="190"] .ghx-issue,
+.ghx-column[data-column-id="190"] .ghx-parent-stub {
+opacity: 0.4;
 }
-
-.ghx-column[data-column-id="188"] .ghx-issue:hover,
-.ghx-column[data-column-id="189"] .ghx-issue:hover, 
-.ghx-column[data-column-id="190"] .ghx-issue:hover {
-    opacity: 1;
+ 
+.ghx-column[data-column-id="187"] *:hover,
+.ghx-column[data-column-id="190"] *:hover {
+opacity: 1 !important;
 }
-
-
-
+ 
+ 
+ 
 /* Extra Fields on cards */
-
+ 
 .ghx-extra-field .ghx-extra-field-content {
-    color: #939393 !important;
-    font-size: 11px !important;
-    padding-left: 16px;
-    position: relative;
+color: #939393 !important;
+font-size: 11px !important;
+padding-left: 16px;
+position: relative;
 }
-
+ 
 .ghx-extra-field .ghx-extra-field-content:before {
-    background-repeat: no-repeat;  
-    content: "";
-    display: inline-block;
-    height: 12px;
-    position: absolute;
-    top: 1px;
-    width: 12px;
+background-repeat: no-repeat;
+content: "";
+display: inline-block;
+height: 12px;
+position: absolute;
+top: 1px;
+width: 12px;
 }
-
+ 
 .ghx-extra-field[data-tooltip^="Due Date"] .ghx-extra-field-content:before {
-    background-image: url("https://s3.amazonaws.com/uploads.hipchat.com/11887/39301/cQJp6KGBExnOyW6/date.png");
-    left: 0;
+background-image: url("https://s3.amazonaws.com/uploads.hipchat.com/11887/39301/cQJp6KGBExnOyW6/date.png");
+left: 0;
 }
-
+ 
 .ghx-extra-field[data-tooltip^="Σ Original Estimate"] .ghx-extra-field-content:before {
-    background-image: url("https://s3.amazonaws.com/uploads.hipchat.com/11887/39301/HsNpRpkSfJNVSle/clock.png");
-    left: 0;
+background-image: url("https://s3.amazonaws.com/uploads.hipchat.com/11887/39301/HsNpRpkSfJNVSle/clock.png");
+left: 0;
 }
-
+ 
 .ghx-extra-field[data-tooltip^="Σ Time Spent"] .ghx-extra-field-content:before {
-    background-image: url("https://s3.amazonaws.com/uploads.hipchat.com/11887/39301/HsNpRpkSfJNVSle/clock.png");
-    left: 0;
+background-image: url("https://s3.amazonaws.com/uploads.hipchat.com/11887/39301/HsNpRpkSfJNVSle/clock.png");
+left: 0;
 }
-
+ 
 .ghx-extra-field[data-tooltip^="Σ Time Spent"] .ghx-extra-field-content {
-    color: green !important;
-    position: relative;
-    padding-right: 34px;
+color: green !important;
+position: relative;
+padding-right: 34px;
 }
-
+ 
 .ghx-extra-field[data-tooltip^="Σ Time Spent"] .ghx-extra-field-content:after {
-    content: " spent";
-    position: absolute;
-    height: 20px;
-    width: 30px;
-    display: inline-block;
-    right: 0px;
+content: " spent";
+position: absolute;
+height: 20px;
+width: 30px;
+display: inline-block;
+right: 0px;
 }
-
+ 
 /* Hide field if value is "none" */
 .ghx-extra-field[data-tooltip~="None"] {
-    display: none !important;
+display: none !important;
 }
+  
+/* Epic label */
 
+.ghx-issue .aui-label {
+  font-size: 10px !important;
+}
+ 
+ 
 /**************************************
-
-User avatars for quick filters
-
+Quick Filters
 ***************************************/
-
-.js-quickfilter-button[title^="assignee ="] {
-    padding-left: 30px !important;
-    position: relative;
+.ghx-controls-filters dt {
+display: none;
 }
-
+/**************************************
+User avatars for quick filters
+***************************************/
+ 
+.js-quickfilter-button[title^="assignee ="] {
+padding-left: 30px !important;
+position: relative;
+}
+ 
 .js-quickfilter-button[title="assignee = vmaxakova"]:before,
 .js-quickfilter-button[title="assignee = dnguyen"]:before,
 .js-quickfilter-button[title="assignee = kharrop"]:before,
-.js-quickfilter-button[title="assignee = lturri"]:before {
-    content: " ";
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size: contain !important;
-    background-size: 16px 16px !important;
-    border-radius: 3px;
-    height: 16px;
-    position: absolute;
-    left: 6px;
-    top: 6px;
-    width: 16px;
-}
-
-.js-quickfilter-button[title="assignee = vmaxakova"]:before {
-    background-image: url("https://secure.gravatar.com/avatar/4ea4856d1931ff4793b4984463884e77?d=mm&s=48");
-}
-
-.js-quickfilter-button[title="assignee = dnguyen"]:before {
-    background-image: url("https://secure.gravatar.com/avatar/17e92fa317165ad98fe75eabf4d51d56?d=mm&s=48");
-}
-
-.js-quickfilter-button[title="assignee = kharrop"]:before {
-    background-image: url("https://secure.gravatar.com/avatar/5b9b52788900f3317b3bc76855953b81?d=mm&s=48");
-}
-
-.js-quickfilter-button[title="assignee = lturri"]:before {
-    background-image: url("https://s3.amazonaws.com/uploads.hipchat.com/11887/39301/bhYmuHPQVWEHGEL/upload.png");
+.js-quickfilter-button[title="assignee = lturri"]:before,
+.js-quickfilter-button[title="assignee = lso"]:before, 
+.js-quickfilter-button[title="assignee = rchen"]:before {
+content: " ";
+background-position: 0 0;
+background-repeat: no-repeat;
+background-size: contain !important;
+background-size: 16px 16px !important;
+border-radius: 3px;
+height: 16px;
+position: absolute;
+left: 6px;
+top: 6px;
+width: 16px;
 }
  
-
-
+.js-quickfilter-button[title="assignee = vmaxakova"]:before {
+background-image: url("https://secure.gravatar.com/avatar/4ea4856d1931ff4793b4984463884e77?d=mm&s=48");
+}
+ 
+.js-quickfilter-button[title="assignee = dnguyen"]:before {
+background-image: url("https://secure.gravatar.com/avatar/17e92fa317165ad98fe75eabf4d51d56?d=mm&s=48");
+}
+ 
+.js-quickfilter-button[title="assignee = kharrop"]:before {
+background-image: url("https://secure.gravatar.com/avatar/5b9b52788900f3317b3bc76855953b81?d=mm&s=48");
+}
+ 
+.js-quickfilter-button[title="assignee = lturri"]:before {
+background-image: url("https://helpdesk.alkamitech.com/secure/useravatar?ownerId=lturri&avatarId=11804");
+}
+  
+.js-quickfilter-button[title="assignee = lso"]:before {
+background-image: url("https://helpdesk.alkamitech.com/secure/useravatar?ownerId=lso&avatarId=13101");
+}
+  
+.js-quickfilter-button[title="assignee = rchen"]:before {
+background-image: url("https://secure.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&s=48");
+}
+ 
+ 
 /**************************************
-
-Use colored dots for "Due in..." filters
-
+"Due in..." indicators on Quick Filters
 ***************************************/
-
+ 
 .js-quickfilter-button[title^="Due in"],
 .js-quickfilter-button[title^="Overdue"],
 .js-quickfilter-button[title^="No due date"] {
-    padding-left: 20px !important;
-    position: relative;
+padding-left: 20px !important;
+position: relative;
 }
-
+ 
 .js-quickfilter-button[title^="Due in"]:before,
 .js-quickfilter-button[title^="Overdue"]:before,
 .js-quickfilter-button[title^="No due date"]:before {
-    content: " ";
-    border-radius: 100%;
-    height: 7px;
-    position: absolute;
-    left: 6px;
-    top: 10px;
-    width: 7px;
+content: " ";
+border-radius: 100%;
+height: 7px;
+position: absolute;
+left: 6px;
+top: 10px;
+width: 7px;
 }
-
+ 
 .js-quickfilter-button[title="Overdue"]:before {
-    background-color: #cc0000;
+background-color: #cc0000;
 }
-
+ 
 .js-quickfilter-button[title="Due in 1 week"]:before {
-    background-color: #ff9933;
+background-color: #ff9933;
 }
-
+ 
 .js-quickfilter-button[title="Due in 2 weeks"]:before {
-    background-color: #ffdd33;
+background-color: #ffdd33;
 }
-
+ 
 .js-quickfilter-button[title="Due in 4 weeks"]:before {
-    background-color: #aae0aa;
+background-color: #aae0aa;
 }
-
+ 
 .js-quickfilter-button[title^="No due date"]:before {
-    background-color: transparent;
-    border: 1px solid #CCC;
+background-color: transparent;
+border: 1px solid #CCC;
 }
-
-
+ 
+ 
 /**************************************
-
 Quick Filter Dividers
-
 ***************************************/
-
-
-.js-quickfilter-button[title="assignee = lturri"],
+ 
+ 
+.js-quickfilter-button[title="assignee = rchen"],
 .js-quickfilter-button[title^="No due date"] {
-    margin-right: 20px !important;
+margin-right: 20px !important;
 }
-
-.js-quickfilter-button[title="assignee = lturri"]:after,
+ 
+.js-quickfilter-button[title="assignee = rchen"]:after,
 .js-quickfilter-button[title^="No due date"]:after {
-    content: " ";
-    border-right: 1px dotted #CCC;
-    height: 22px;
-    position: absolute;
-    right: -10px;
-    top: 4px;
-    width: 1px;
-} 
-
-
-/**************************************
-
-Quick View Sidebar
-
-***************************************/
-
-/* Make issue title larger on quick-view sidebar */
-
-.ghx-detail-head .ghx-detail-summary {
-    margin-bottom: 10px !important;
-    margin-top: 20px !important;
+content: " ";
+border-right: 1px dotted #CCC;
+height: 22px;
+position: absolute;
+right: -10px;
+top: 4px;
+width: 1px;
 }
-
+ 
+ 
+/**************************************
+Quick View Sidebar
+***************************************/
+ 
+/* Make issue title larger on quick-view sidebar */
+ 
+.ghx-detail-head .ghx-detail-summary {
+margin-bottom: 10px !important;
+margin-top: 20px !important;
+}
+ 
 .ghx-detail-view .ghx-fieldname-summary {
-    font-size: 18px;
+font-size: 18px;
 font-weight: bold !important;
 }
-
+ 
 .ghx-detail-view .ghx-fieldname-issuekey a {
-    background-color: #3B73AF;
-    border-radius: 3px;
-    color: #FFFFFF !important;
-    font-size: 13px;
-    font-weight: bold !important;
-    padding: 3px 5px;
-    text-decoration: none !important;
+background-color: #3B73AF;
+border-radius: 3px;
+color: #FFFFFF !important;
+font-size: 13px;
+font-weight: bold !important;
+padding: 3px 5px;
+text-decoration: none !important;
 }
-
+ 
 .ghx-detail-view .ghx-fieldname-issuekey a:hover {
-    background-color: #194067;
+background-color: #194067;
 }
-
+ 
 /* Style labels (they are unstyled for some reason */
 .ghx-detail-view .ghx-detail-description.ghx-fieldname-labels {
-    background: none repeat scroll 0 0 #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 3.01px;
-    display: inline-block !important;
-    font-size: 13px !important;
-    font-weight: normal;
-    line-height: 1;
-    margin-left: 4px !important;
-    max-width: 100%;
-    overflow-x: hidden;
-    padding: 2px 5px !important;
-    text-align: left;
-    text-decoration: none;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+background: #f5f5f5;
+border: 1px solid #ccc;
+border-radius: 3.01px;
+display: inline-block !important;
+font-size: 13px !important;
+font-weight: normal;
+line-height: 1;
+margin-left: 4px !important;
+max-width: 100%;
+overflow-x: hidden;
+padding: 2px 5px !important;
+text-align: left;
+text-decoration: none;
+text-overflow: ellipsis;
+white-space: nowrap;
 }
-
+ 
 /* Adjust wrapping Epic */
 .ghx-detail-view .aui-label {
-    font-size: 13px !important;
-    line-height: 125% !important;
+font-size: 13px !important;
+line-height: 125% !important;
 }
-
-
-
+ 
+ 
+ 
+/**************************************
+Timesheets
+***************************************/
+ 
+/* Move type icon over to issue key */
+ 
+.iss-nav #issuetable > tbody > tr > th.left:first-child, .iss-nav #issuetable > tbody > tr > td.left:first-child {
+font-weight: bold;
+padding-left: 20px !important;
+}
+ 
+tr.mainlog.log-issue.issuerow.issue {
+position: relative;
+}
+ 
+td.image.nav.issuetype.color-type > img {
+position: absolute;
+left: 0;
+top: 50%;
+margin-top: -9px !important;
+}
+ 
+.tempo-timesheet #issuetable tbody tr:hover {
+background-color: rgba(235, 242, 249, .7) !important;
+}
+ 
+.tempo-timesheet #issuetable tbody tr:hover td {
+border-bottom: 0 none !important;
+border-top: 0 none !important;
+}
+ 
+.tempo-timesheet td {
+padding: 7px !important;
+}
+ 
+ 
+ 
+/**************************************
+Attachments Plugin
+***************************************/
+ 
+.attach-cat-container {
+margin-bottom: 20px !important;
+}
+ 
+.attach-cat-empty {
+color: #AAAAAA !important;
+font-size: 11px !important;
+margin-top: 5px !important;
+}
+ 
+ 
+ 
+/**************************************
+Sidebar
+***************************************/
+ 
+#viewissuesidebar .mod-content {
+background-color: #f5f5f5;
+border: 1px solid #cccccc;
+border-radius: 5px;
+padding-bottom: 10px !important;
+padding-top: 10px !important;
+}
+ 
+ 
+#viewissuesidebar .mod-content dl {
+margin-bottom: 20px !important;
+}
+ 
+#viewissuesidebar .mod-content dl #due-date {
+font-size: 20px !important;
+font-weight: bold;
+}
+ 
+ 
+ 
+/**************************************
+Move quick sidebar
+***************************************/
+ 
+#ghx-plan-group, #ghx-work {
+display: block !important;
+position: relative !important;
+}
+ 
+#ghx-detail-view {
+position: absolute !important;
+right: 0;
+top: 0;
+z-index: 99;
+}
+ 
+/**************************************
+Toolbar Action Items - Workflow Transitions
+***************************************/
+#opsbar-opsbar-transitions .toolbar-item a {
+padding-left: 35px;
+position: relative;
+}
+ 
+#opsbar-opsbar-transitions .toolbar-item a:before {
+background-image: url(https://s3.amazonaws.com/uploads.hipchat.com/11887/39301/WP5oGewAp3iLYir/jira_sprite.png);
+background-repeat: no-repeat;
+content: "";
+display: block;
+height: 16px;
+left: 10px;
+position: absolute;
+top: 7px;
+width: 16px;
+}
+/***** Rejected *****/
+.toolbar-item a#action_id_721:before,
+.toolbar-item a#action_id_821:before {
+background-position: -220px 0;
+}
+ 
+/***** Approved *****/
+.toolbar-item a#action_id_731:before,
+.toolbar-item a#action_id_811:before{
+background-position: -200px 0;
+}
+/***** Design Review *****/
+.toolbar-item a#action_id_791:before {
+background-position: -220px 0;
+}
+ 
+.toolbar-item a#action_id_801:before {
+background-position: -200px 0;
+}
+/***** Code Review *****/
+.toolbar-item a#action_id_751:before {
+background-position: -220px 0;
+}
+ 
+.toolbar-item a#action_id_761:before {
+background-position: -200px 0;
+}
+ 
+/***** Workflow *****/
+.toolbar-item a#opsbar-transitions_more {
+padding-left: 10px;
+}
+.toolbar-item a#opsbar-transitions_more:before {
+display: none;
+}
+/***** Hide button ****/
+.toolbar-item #comment-issue {
+display: none;
+}
+ 
+/* space out buttons */
+#opsbar-opsbar-transitions {
+margin-left: 40px;
+margin-right: 40px;
+}
+ 
+ 
+/**************************************
+More Menu
+***************************************/
+ 
+/* hide some items */
+.aui-list-item-link#view-time-on-issue,
+.aui-list-item-link#tempo-bar-mlink,
+.aui-list-item-link#log-work,
+.aui-list-item-link#schedule-issue-link,
+.aui-list-item-link#greenhopper-rapidboard-operation,
+.aui-list-item-link#greenhopper-rank-top-operation,
+.aui-list-item-link#greenhopper-rank-bottom-operation,
+.aui-list-item-link#toggle-vote-issue,
+.aui-list-item-link#view-voters,
+.aui-list-item-link#toggle-watch-issue,
+.aui-list-item-link#manage-watchers {
+display: none !important;
+}
+ 
+.aui-list ul {
+padding: 0 !important;
+}
+ 
+#opsbar-operations_more_drop .aui-list-section {
+border: 0 none !important;
+}
+ 
+#opsbar-operations_more_drop .aui-list-item-link {
+padding-left: 35px !important;
+position: relative;
+}
+ 
+#opsbar-operations_more_drop .aui-list-item-link:before {
+background-image: url(https://s3.amazonaws.com/uploads.hipchat.com/11887/39301/WP5oGewAp3iLYir/jira_sprite.png);
+background-repeat: no-repeat;
+content: "";
+display: block;
+height: 16px;
+left: 10px;
+position: absolute;
+top: 5px;
+width: 16px;
+}
+ 
+/****** Log Work ******/
+.aui-list-item-link.issueaction-tempo-log-work {
+margin-bottom: 15px !important;
+}
+.aui-list-item-link.issueaction-tempo-log-work:before {
+background-position: 0 1px;
+}
+.active > .aui-list-item-link.issueaction-tempo-log-work:before {
+background-position: 0 -19px;
+}
+ 
+/****** Attachments ******/
+.aui-list-item-link.issueaction-attach-file:before {
+background-position: -20px 1px;
+}
+.active > .aui-list-item-link.issueaction-attach-file:before {
+background-position: -20px -19px;
+}
+.aui-list-item-link.issueaction-attach-screenshot-html5:before {
+background-position: -40px 1px;
+}
+.active > .aui-list-item-link.issueaction-attach-screenshot-html5:before {
+background-position: -40px -19px;
+}
+ 
+.aui-list-item-link.issueaction-attach-screenshot-html5 {
+margin-bottom: 15px;
+}
+ 
+ 
+/****** Subtasks ******/
+.aui-list-item-link.issueaction-create-subtask {
+margin-top: 10px !important;
+}
+.aui-list-item-link.issueaction-create-subtask:before {
+background-position: -60px 1px;
+}
+.active > .aui-list-item-link.issueaction-create-subtask:before {
+background-position: -60px -19px;
+}
+ 
+.aui-list-item-link.issueaction-issue-to-subtask:before {
+background-position: -80px 1px;
+}
+.active > .aui-list-item-link.issueaction-issue-to-subtask:before {
+background-position: -80px -19px;
+}
+ 
+/****** Convert to Issue ******/
+.aui-list-item-link.issueaction-subtask-to-issue:before {
+background-position: -80px 1px;
+}
+.active > .aui-list-item-link.issueaction-subtask-to-issue:before {
+background-position: -80px -19px;
+}
+/***** Move *****/
+.aui-list-item-link.issueaction-move-issue {
+margin-top: 15px !important;
+}
+.aui-list-item-link.issueaction-move-issue:before,
+.aui-list-item-link.issueaction-move-subtask:before {
+background-position: -100px 1px;
+}
+.active > .aui-list-item-link.issueaction-move-issue:before,
+.active > .aui-list-item-link.issueaction-move-subtask:before{
+background-position: -100px -19px;
+}
+/***** Link *****/
+.aui-list-item-link.issueaction-link-issue:before {
+background-position: -120px 1px;
+}
+.active > .aui-list-item-link.issueaction-link-issue:before {
+background-position: -120px -19px;
+}
+/***** Clone *****/
+.aui-list-item-link.issueaction-clone-issue:before {
+background-position: -140px 1px;
+}
+.active > .aui-list-item-link.issueaction-clone-issue:before {
+background-position: -140px -19px;
+}
+/***** Labels *****/
+.aui-list-item-link.issueaction-edit-labels:before {
+background-position: -160px 1px;
+}
+.active > .aui-list-item-link.issueaction-edit-labels:before {
+background-position: -160px -19px;
+}
+ 
+/****** Delete Issue ******/
+.aui-list-item-link.issueaction-delete-issue {
+margin-top: 15px !important;
+}
+.aui-list-item-link.issueaction-delete-issue:before {
+background-position: -240px 1px;
+}
+.active > .aui-list-item-link.issueaction-delete-issue:before {
+background-position: -240px -19px;
+}
+ 
+/***** Fixing Jira Bugs ****/
+  
+#watchersDialog {
+  padding-left: 50px !important;
+}
+  
+  
+/***********************************************************************
+Move Issue Dialog
+  • Resized the dialog so it's not so spread out
+  • Moved buttons to the right side to speed up the process
+************************************************************************/
+  
+.aui-page-panel-content > form[action^="MoveIssue"],
+.aui-page-panel-content > form[action^="ConvertSubTaskSetIssueType"] {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  min-width: 750px;
+  padding: 20px;
+  width: 50% !important;
+}
+  
+.aui-page-panel-content > form[action^="MoveIssueConfirm"] .buttons,
+.aui-page-panel-content > form[action^="ConvertSubTaskSetIssueType"] .buttons {
+ float: right; 
+} 
 
 }
