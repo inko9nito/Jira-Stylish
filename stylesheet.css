@@ -156,7 +156,8 @@ background-image: url("https://s3.amazonaws.com/uploads.hipchat.com/11887/39301/
 left: 0;
 }
  
-.ghx-extra-field[data-tooltip^="Σ Original Estimate"] .ghx-extra-field-content:before {
+.ghx-extra-field[data-tooltip^="Σ Original Estimate"] .ghx-extra-field-content:before,
+  .ghx-extra-field[data-tooltip^="Σ Remaining Estimate"] .ghx-extra-field-content:before{
 background-image: url("https://s3.amazonaws.com/uploads.hipchat.com/11887/39301/HsNpRpkSfJNVSle/clock.png");
 left: 0;
 }
@@ -213,7 +214,8 @@ position: relative;
 .js-quickfilter-button[title="assignee = kharrop"]:before,
 .js-quickfilter-button[title="assignee = lturri"]:before,
 .js-quickfilter-button[title="assignee = lso"]:before, 
-.js-quickfilter-button[title="assignee = rchen"]:before {
+.js-quickfilter-button[title="assignee = rchen"]:before,
+.js-quickfilter-button[title="assignee = mpreaux"]:before {
 content: " ";
 background-position: 0 0;
 background-repeat: no-repeat;
@@ -248,7 +250,11 @@ background-image: url("https://helpdesk.alkamitech.com/secure/useravatar?ownerId
 }
   
 .js-quickfilter-button[title="assignee = rchen"]:before {
-background-image: url("https://secure.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&s=48");
+background-image: url("https://helpdesk.alkamitech.com/secure/useravatar?ownerId=rchen&avatarId=13202");
+}
+  
+.js-quickfilter-button[title="assignee = mpreaux"]:before {
+background-image: url("https://helpdesk.alkamitech.com/secure/useravatar?ownerId=mpreaux&avatarId=13203");
 }
  
  
@@ -580,10 +586,10 @@ width: 16px;
 }
  
 /****** Log Work ******/
-.aui-list-item-link.issueaction-tempo-log-work {
+.aui-list-item-link.issueaction-tempo-plan-time {
 margin-bottom: 15px !important;
 }
-.aui-list-item-link.issueaction-tempo-log-work:before {
+.aui-list-item-link.issueaction-tempo-plan-time:before {
 background-position: 0 1px;
 }
 .active > .aui-list-item-link.issueaction-tempo-log-work:before {
