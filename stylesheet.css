@@ -157,7 +157,7 @@ left: 0;
 }
  
 .ghx-extra-field[data-tooltip^="Σ Original Estimate"] .ghx-extra-field-content:before,
-  .ghx-extra-field[data-tooltip^="Σ Remaining Estimate"] .ghx-extra-field-content:before{
+  .ghx-extra-field[data-tooltip^="Remaining Estimate"] .ghx-extra-field-content:before{
 background-image: url("https://s3.amazonaws.com/uploads.hipchat.com/11887/39301/HsNpRpkSfJNVSle/clock.png");
 left: 0;
 }
@@ -209,13 +209,12 @@ padding-left: 30px !important;
 position: relative;
 }
  
-.js-quickfilter-button[title="assignee = vmaxakova"]:before,
-.js-quickfilter-button[title="assignee = dnguyen"]:before,
-.js-quickfilter-button[title="assignee = kharrop"]:before,
-.js-quickfilter-button[title="assignee = lturri"]:before,
-.js-quickfilter-button[title="assignee = lso"]:before, 
-.js-quickfilter-button[title="assignee = rchen"]:before,
-.js-quickfilter-button[title="assignee = mpreaux"]:before {
+.js-quickfilter-button[title^="assignee = vmaxakova"]:before,
+.js-quickfilter-button[title^="assignee = rormsby"]:before,
+.js-quickfilter-button[title^="assignee = kharrop"]:before,
+.js-quickfilter-button[title^="assignee = lturri"]:before,
+.js-quickfilter-button[title^="assignee = rchen"]:before,
+.js-quickfilter-button[title^="assignee = mpreaux"]:before {
 content: " ";
 background-position: 0 0;
 background-repeat: no-repeat;
@@ -229,31 +228,27 @@ top: 6px;
 width: 16px;
 }
  
-.js-quickfilter-button[title="assignee = vmaxakova"]:before {
+.js-quickfilter-button[title^="assignee = vmaxakova"]:before {
 background-image: url("https://secure.gravatar.com/avatar/4ea4856d1931ff4793b4984463884e77?d=mm&s=48");
 }
  
-.js-quickfilter-button[title="assignee = dnguyen"]:before {
-background-image: url("https://secure.gravatar.com/avatar/17e92fa317165ad98fe75eabf4d51d56?d=mm&s=48");
+.js-quickfilter-button[title^="assignee = rormsby"]:before {
+background-image: url("https://helpdesk.alkamitech.com/secure/useravatar?ownerId=rormsby&avatarId=14105");
 }
  
-.js-quickfilter-button[title="assignee = kharrop"]:before {
+.js-quickfilter-button[title^="assignee = kharrop"]:before {
 background-image: url("https://secure.gravatar.com/avatar/5b9b52788900f3317b3bc76855953b81?d=mm&s=48");
 }
  
-.js-quickfilter-button[title="assignee = lturri"]:before {
+.js-quickfilter-button[title^="assignee = lturri"]:before {
 background-image: url("https://helpdesk.alkamitech.com/secure/useravatar?ownerId=lturri&avatarId=11804");
 }
   
-.js-quickfilter-button[title="assignee = lso"]:before {
-background-image: url("https://helpdesk.alkamitech.com/secure/useravatar?ownerId=lso&avatarId=13101");
-}
-  
-.js-quickfilter-button[title="assignee = rchen"]:before {
+.js-quickfilter-button[title^="assignee = rchen"]:before {
 background-image: url("https://helpdesk.alkamitech.com/secure/useravatar?ownerId=rchen&avatarId=13202");
 }
   
-.js-quickfilter-button[title="assignee = mpreaux"]:before {
+.js-quickfilter-button[title^="assignee = mpreaux"]:before {
 background-image: url("https://helpdesk.alkamitech.com/secure/useravatar?ownerId=mpreaux&avatarId=13203");
 }
  
