@@ -15,7 +15,7 @@ Copy and paste the contents the stylesheet using the Stylish plugin.
 # Screenshots
 
 ### Board View
-<img src="http://content.screencast.com/users/inko9nito/folders/Jing/media/d88060e6-bbd3-451b-bcf9-b3ab93f99c85/00001317.png" width="100%">
+<img src="http://content.screencast.com/users/inko9nito/folders/Jing/media/d6ea4ae4-97cc-49e4-bb1b-8808298d2d6b/00001318.png" width="100%">
 * Reduced font size and assignee avatar size to see more of the issue summary on each card
 * Clock icon next to remaining estimate on cards
 * Calendar icon next to due date on cards
