@@ -63,11 +63,9 @@ width: 3px !important;
 display: none;
 }
  
-/* move priority to bottom of card */
-.ghx-issue .ghx-flags {
-bottom: 4px !important;
-right: 3px !important;
-top: auto !important;
+/* remove priority */
+.ghx-issue .ghx-flags .ghx-priority {
+display: none;
 }
  
 .aui-label {
@@ -200,6 +198,16 @@ Quick Filters
 .ghx-controls-filters dt {
 display: none;
 }
+
+/* Gray out completed sprints */
+.js-quickfilter-button[title^="Sprint = 84"], .js-quickfilter-button[title^="Sprint = 84"]:hover,
+.js-quickfilter-button[title^="Sprint = 85"], .js-quickfilter-button[title^="Sprint = 85"]:hover,
+.js-quickfilter-button[title^="Sprint = 34"], .js-quickfilter-button[title^="Sprint = 34"]:hover{
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+  
+  
 /**************************************
 User avatars for quick filters
 ***************************************/
@@ -207,14 +215,15 @@ User avatars for quick filters
 .js-quickfilter-button[title^="assignee ="] {
 padding-left: 30px !important;
 position: relative;
-}
- 
+} 
+  
 .js-quickfilter-button[title^="assignee = vmaxakova"]:before,
 .js-quickfilter-button[title^="assignee = rormsby"]:before,
-.js-quickfilter-button[title^="assignee = kharrop"]:before,
+.js-quickfilter-button[title^="assignee = kgoodrich"]:before,
 .js-quickfilter-button[title^="assignee = lturri"]:before,
-.js-quickfilter-button[title^="assignee = rchen"]:before,
-.js-quickfilter-button[title^="assignee = mpreaux"]:before {
+.js-quickfilter-button[title^="assignee = gsargent"]:before,
+  .js-quickfilter-button[title^="assignee = ckee"]:before,
+.js-quickfilter-button[title^="assignee = lfruge"]:before {
 content: " ";
 background-position: 0 0;
 background-repeat: no-repeat;
@@ -231,27 +240,34 @@ width: 16px;
 .js-quickfilter-button[title^="assignee = vmaxakova"]:before {
 background-image: url("https://secure.gravatar.com/avatar/4ea4856d1931ff4793b4984463884e77?d=mm&s=48");
 }
+  
+.js-quickfilter-button[title^="assignee = lturri"]:before {
+background-image: url("https://helpdesk.alkamitech.com/secure/useravatar?ownerId=lturri&avatarId=11804");
+}
  
 .js-quickfilter-button[title^="assignee = rormsby"]:before {
 background-image: url("https://helpdesk.alkamitech.com/secure/useravatar?ownerId=rormsby&avatarId=14105");
 }
  
-.js-quickfilter-button[title^="assignee = kharrop"]:before {
-background-image: url("https://secure.gravatar.com/avatar/5b9b52788900f3317b3bc76855953b81?d=mm&s=48");
+.js-quickfilter-button[title^="assignee = gsargent"]:before {
+background-image: url("https://helpdesk.alkamitech.com/secure/useravatar?ownerId=gsargent&avatarId=14840");
 }
  
-.js-quickfilter-button[title^="assignee = lturri"]:before {
-background-image: url("https://helpdesk.alkamitech.com/secure/useravatar?ownerId=lturri&avatarId=11804");
+
+.js-quickfilter-button[title^="assignee = kgoodrich"]:before {
+background-image: url("https://helpdesk.alkamitech.com/secure/useravatar?ownerId=kgoodrich&avatarId=15101");
 }
   
-.js-quickfilter-button[title^="assignee = rchen"]:before {
-background-image: url("https://helpdesk.alkamitech.com/secure/useravatar?ownerId=rchen&avatarId=13202");
+.js-quickfilter-button[title^="assignee = lfruge"]:before {
+background-image: url("https://helpdesk.alkamitech.com/secure/useravatar?ownerId=lfruge&avatarId=15209");
 }
   
-.js-quickfilter-button[title^="assignee = mpreaux"]:before {
-background-image: url("https://helpdesk.alkamitech.com/secure/useravatar?ownerId=mpreaux&avatarId=13203");
+.js-quickfilter-button[title^="assignee = ckee"]:before {
+background-image: url("https://helpdesk.alkamitech.com/secure/useravatar?ownerId=ckee&avatarId=15214");
 }
- 
+
+  
+
  
 /**************************************
 "Due in..." indicators on Quick Filters
@@ -302,22 +318,47 @@ border: 1px solid #CCC;
 Quick Filter Dividers
 ***************************************/
  
- 
-.js-quickfilter-button[title="assignee = rchen"],
+/* Divider after */
+.js-quickfilter-button[title="assignee = Empty"],
 .js-quickfilter-button[title^="No due date"] {
-margin-right: 20px !important;
+  margin-right: 20px !important;
+  position: relative;
 }
- 
-.js-quickfilter-button[title="assignee = rchen"]:after,
+  
+.js-quickfilter-button[title="assignee = Empty"]:after,
 .js-quickfilter-button[title^="No due date"]:after {
-content: " ";
-border-right: 1px dotted #CCC;
-height: 22px;
-position: absolute;
-right: -10px;
-top: 4px;
-width: 1px;
+  border-right: 1px dotted #CCC;
+  right: -10px;
 }
+  
+/* remove padding from Unassigned filter */
+.js-quickfilter-button[title^="assignee = Empty"] {
+padding-left: 10px !important;
+} 
+  
+
+/* Divider before */  
+.js-quickfilter-button[title^="Design tickets assigned to Team 1"] {
+  margin-left: 20px !important;
+  position: relative;
+}
+  
+.js-quickfilter-button[title^="Design tickets assigned to Team 1"]:after {
+  border-left: 1px dotted #CCC;
+  left: -10px;
+}
+
+/* Divider Style */
+.js-quickfilter-button[title="assignee = Empty"]:after,
+.js-quickfilter-button[title^="Design tickets assigned to Team 1"]:after,
+.js-quickfilter-button[title^="No due date"]:after {
+  content: " ";
+  height: 22px;
+  position: absolute;
+  top: 2px;
+  width: 1px;
+}
+  
  
  
 /**************************************
@@ -327,52 +368,52 @@ Quick View Sidebar
 /* Make issue title larger on quick-view sidebar */
  
 .ghx-detail-head .ghx-detail-summary {
-margin-bottom: 10px !important;
-margin-top: 20px !important;
+  margin-bottom: 10px !important;
+  margin-top: 20px !important;
 }
  
 .ghx-detail-view .ghx-fieldname-summary {
-font-size: 18px;
-font-weight: bold !important;
+  font-size: 18px;
+  font-weight: bold !important;
 }
  
 .ghx-detail-view .ghx-fieldname-issuekey a {
-background-color: #3B73AF;
-border-radius: 3px;
-color: #FFFFFF !important;
-font-size: 13px;
-font-weight: bold !important;
-padding: 3px 5px;
-text-decoration: none !important;
+  background-color: #3B73AF;
+  border-radius: 3px;
+  color: #FFFFFF !important;
+  font-size: 13px;
+  font-weight: bold !important;
+  padding: 3px 5px;
+  text-decoration: none !important;
 }
  
 .ghx-detail-view .ghx-fieldname-issuekey a:hover {
-background-color: #194067;
+  background-color: #194067;
 }
  
 /* Style labels (they are unstyled for some reason */
 .ghx-detail-view .ghx-detail-description.ghx-fieldname-labels {
-background: #f5f5f5;
-border: 1px solid #ccc;
-border-radius: 3.01px;
-display: inline-block !important;
-font-size: 13px !important;
-font-weight: normal;
-line-height: 1;
-margin-left: 4px !important;
-max-width: 100%;
-overflow-x: hidden;
-padding: 2px 5px !important;
-text-align: left;
-text-decoration: none;
-text-overflow: ellipsis;
-white-space: nowrap;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 3.01px;
+  display: inline-block !important;
+  font-size: 13px !important;
+  font-weight: normal;
+  line-height: 1;
+  margin-left: 4px !important;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 2px 5px !important;
+  text-align: left;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
  
 /* Adjust wrapping Epic */
 .ghx-detail-view .aui-label {
-font-size: 13px !important;
-line-height: 125% !important;
+  font-size: 13px !important;
+  line-height: 125% !important;
 }
  
  
@@ -384,32 +425,32 @@ Timesheets
 /* Move type icon over to issue key */
  
 .iss-nav #issuetable > tbody > tr > th.left:first-child, .iss-nav #issuetable > tbody > tr > td.left:first-child {
-font-weight: bold;
-padding-left: 20px !important;
+  font-weight: bold;
+  padding-left: 20px !important;
 }
  
 tr.mainlog.log-issue.issuerow.issue {
-position: relative;
+  position: relative;
 }
  
 td.image.nav.issuetype.color-type > img {
-position: absolute;
-left: 0;
-top: 50%;
-margin-top: -9px !important;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -9px !important;
 }
  
 .tempo-timesheet #issuetable tbody tr:hover {
-background-color: rgba(235, 242, 249, .7) !important;
+  background-color: rgba(235, 242, 249, .7) !important;
 }
  
 .tempo-timesheet #issuetable tbody tr:hover td {
-border-bottom: 0 none !important;
-border-top: 0 none !important;
+  border-bottom: 0 none !important;
+  border-top: 0 none !important;
 }
  
 .tempo-timesheet td {
-padding: 7px !important;
+  padding: 7px !important;
 }
  
  
@@ -419,13 +460,13 @@ Attachments Plugin
 ***************************************/
  
 .attach-cat-container {
-margin-bottom: 20px !important;
+  margin-bottom: 20px !important;
 }
  
 .attach-cat-empty {
-color: #AAAAAA !important;
-font-size: 11px !important;
-margin-top: 5px !important;
+  color: #AAAAAA !important;
+  font-size: 11px !important;
+  margin-top: 5px !important;
 }
  
  
@@ -435,21 +476,21 @@ Sidebar
 ***************************************/
  
 #viewissuesidebar .mod-content {
-background-color: #f5f5f5;
-border: 1px solid #cccccc;
-border-radius: 5px;
-padding-bottom: 10px !important;
-padding-top: 10px !important;
+  background-color: #f5f5f5;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding-bottom: 10px !important;
+  padding-top: 10px !important;
 }
  
  
 #viewissuesidebar .mod-content dl {
-margin-bottom: 20px !important;
+  margin-bottom: 20px !important;
 }
  
 #viewissuesidebar .mod-content dl #due-date {
-font-size: 20px !important;
-font-weight: bold;
+  font-size: 20px !important;
+  font-weight: bold;
 }
  
  
@@ -459,80 +500,80 @@ Move quick sidebar
 ***************************************/
  
 #ghx-plan-group, #ghx-work {
-display: block !important;
-position: relative !important;
+  display: block !important;
+  position: relative !important;
 }
  
 #ghx-detail-view {
-position: absolute !important;
-right: 0;
-top: 0;
-z-index: 99;
+  position: absolute !important;
+  right: 0;
+  top: 0;
+  z-index: 99;
 }
  
 /**************************************
 Toolbar Action Items - Workflow Transitions
 ***************************************/
 #opsbar-opsbar-transitions .toolbar-item a {
-padding-left: 35px;
-position: relative;
+  padding-left: 35px;
+  position: relative;
 }
  
 #opsbar-opsbar-transitions .toolbar-item a:before {
-background-image: url(https://s3.amazonaws.com/uploads.hipchat.com/11887/39301/WP5oGewAp3iLYir/jira_sprite.png);
-background-repeat: no-repeat;
-content: "";
-display: block;
-height: 16px;
-left: 10px;
-position: absolute;
-top: 7px;
-width: 16px;
+  background-image: url(https://s3.amazonaws.com/uploads.hipchat.com/11887/39301/WP5oGewAp3iLYir/jira_sprite.png);
+  background-repeat: no-repeat;
+  content: "";
+  display: block;
+  height: 16px;
+  left: 10px;
+  position: absolute;
+  top: 7px;
+  width: 16px;
 }
 /***** Rejected *****/
 .toolbar-item a#action_id_721:before,
 .toolbar-item a#action_id_821:before {
-background-position: -220px 0;
+  background-position: -220px 0;
 }
  
 /***** Approved *****/
 .toolbar-item a#action_id_731:before,
 .toolbar-item a#action_id_811:before{
-background-position: -200px 0;
+  background-position: -200px 0;
 }
 /***** Design Review *****/
 .toolbar-item a#action_id_791:before {
-background-position: -220px 0;
+  background-position: -220px 0;
 }
  
 .toolbar-item a#action_id_801:before {
-background-position: -200px 0;
+  background-position: -200px 0;
 }
 /***** Code Review *****/
 .toolbar-item a#action_id_751:before {
-background-position: -220px 0;
+  background-position: -220px 0;
 }
  
 .toolbar-item a#action_id_761:before {
-background-position: -200px 0;
+  background-position: -200px 0;
 }
  
 /***** Workflow *****/
 .toolbar-item a#opsbar-transitions_more {
-padding-left: 10px;
+  padding-left: 10px;
 }
 .toolbar-item a#opsbar-transitions_more:before {
-display: none;
+  display: none;
 }
 /***** Hide button ****/
 .toolbar-item #comment-issue {
-display: none;
+  display: none;
 }
  
 /* space out buttons */
 #opsbar-opsbar-transitions {
-margin-left: 40px;
-margin-right: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
  
  
@@ -552,11 +593,11 @@ More Menu
 .aui-list-item-link#view-voters,
 .aui-list-item-link#toggle-watch-issue,
 .aui-list-item-link#manage-watchers {
-display: none !important;
+  display: none !important;
 }
  
 .aui-list ul {
-padding: 0 !important;
+  padding: 0 !important;
 }
  
 #opsbar-operations_more_drop .aui-list-section {
