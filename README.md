@@ -16,6 +16,7 @@ Copy and paste the contents the stylesheet using the Stylish plugin.
 
 ### Board View
 <img src="http://content.screencast.com/users/inko9nito/folders/Jing/media/d6ea4ae4-97cc-49e4-bb1b-8808298d2d6b/00001318.png" width="100%">
+
 * Reduced font size and assignee avatar size to see more of the issue summary on each card
 * Clock icon next to remaining estimate on cards
 * Calendar icon next to due date on cards
@@ -25,7 +26,8 @@ Copy and paste the contents the stylesheet using the Stylish plugin.
 
 
 ### Issue View
-<img src="http://content.screencast.com/users/inko9nito/folders/Jing/media/c56329dc-22e2-4950-9104-a44e26c0545f/00001316.png" width=100%">
+<img src="http://content.screencast.com/users/inko9nito/folders/Jing/media/c56329dc-22e2-4950-9104-a44e26c0545f/00001316.png" width="100%">
+
 * Added icons next to each issue action in the More menu
 * TODO: update icons for issue transition actions
 * Fixed *Who is looking* plugin name overlap bug
